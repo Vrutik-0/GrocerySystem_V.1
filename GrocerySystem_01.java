@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class GrocerySystem_01 {
+public class GrocerySystem_01 
+{
     // Categories
     static String[] categories = {"Dairy", "Vegetables", "Fruits", "Hygiene"};
 
@@ -78,7 +79,7 @@ public class GrocerySystem_01 {
         while (true) {
             System.out.println("\nItems in " + categories[categoryIndex] + ":");
             for (int i = 0; i < items[categoryIndex].length; i++) {
-                System.out.println((i + 1) + ". " + items[categoryIndex][i] + " - Stock: " + stocks[categoryIndex][i] + ", Price: $" + prices[categoryIndex][i]);
+                System.out.println((i + 1) + ". " + items[categoryIndex][i] + " - Stock: " + stocks[categoryIndex][i] + ", Price: Rs " + prices[categoryIndex][i]);
             }
             System.out.println("0. Go back");
             System.out.print("Choose an item to buy or 0 to return: ");
@@ -168,7 +169,7 @@ public class GrocerySystem_01 {
         }
 
         for (int i = 0; i < cartSize; i++) {
-            System.out.println((i + 1) + ". " + cartItems[i] + " - Quantity: " + cartQuantities[i] + ", Price: $" + cartPrices[i]);
+            System.out.println((i + 1) + ". " + cartItems[i] + " - Quantity: " + cartQuantities[i] + ", Price: Rs " + cartPrices[i]);
         }
     }
 
@@ -242,10 +243,10 @@ public class GrocerySystem_01 {
         System.out.println("\nYour Bill:");
         double total = 0;
         for (int i = 0; i < cartSize; i++) {
-            System.out.println(cartItems[i] + " - Quantity: " + cartQuantities[i] + ", Price: $" + cartPrices[i]);
+            System.out.println(cartItems[i] + " - Quantity: " + cartQuantities[i] + ", Price: Rs " + cartPrices[i]);
             total += cartPrices[i];
         }
-        System.out.println("Total: $" + total);
+        System.out.println("Total: Rs " + total);
         System.out.println("Thank you for shopping with us.");
         System.exit(0); // Terminate the program
     }
