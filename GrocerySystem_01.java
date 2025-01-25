@@ -287,12 +287,18 @@ public class GrocerySystem_01
 
             // Update cart
             cartQuantities[index] -= deleteQuantity;
-            cartPrices[index] -= (cartPrices[index] / cartQuantities[index]) * deleteQuantity;
+            if (cartQuantities[index] == 0)
+             {
+                cartPrices[index] = 0;
+            } else 
+            {
+                cartPrices[index] = (cartPrices[index] / (cartQuantities[index] + deleteQuantity)) * cartQuantities[index];
+            }
             System.out.println("Stock deleted successfully.");
         } 
         else 
         {
-            System.out.println(RED+"Invalid option."+RESET);
+            System.out.println("Invalid option.");
         }
     }
 
